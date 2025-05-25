@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">NavTrip</string>
+    <string name="title_home">Home</string>
+    <string name="title_nearby">Nearby</string>
+    <string name="title_hotspots">Hotspots</string>
+    <string name="title_profile">Profile</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_login_page">Login</string>
+    <string name="title_register_page">Register</string>
+    <string name="email">Email</string>
+    <string name="login">Login</string>
+    <string name="signup">Register</string>
+    <string name="name">Username</string>
+    <string name="message_name">Masukkan Username</string>
+    <string name="message_email">contoh@gmail.com</string>
+    <string name="password">Password</string>
+    <string name="message_sandi">Masukkan Password</string>
+</resources>
