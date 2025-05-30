@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.solapp.navtrip.R
 import com.solapp.navtrip.databinding.FragmentHotspotsBinding
 
 class HotspotsFragment : Fragment() {
@@ -22,18 +24,29 @@ class HotspotsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val hotspotsViewModel =
-            ViewModelProvider(this).get(HotspotsViewModel::class.java)
-
         _binding = FragmentHotspotsBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textNotifications
-        hotspotsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+        val hotspotList = listOf(
+            Hotspot("13th Flame Chaser", "Japanese food", "Most authentic japanese food in Surakarta city.....", "100 meters from you", R.drawable.splash),
+            Hotspot("13th Flame Chaser", "Japanese food 1", "Most authentic japanese food in Surakarta city.....", "100 meters from you", R.drawable.splash),
+            Hotspot("13th Flame Chaser", "Japanese food 2", "Most authentic japanese food in Surakarta city.....", "100 meters from you", R.drawable.splash),
+            Hotspot("13th Flame Chaser", "Japanese food 3", "Most authentic japanese food in Surakarta city.....", "100 meters from you", R.drawable.splash),
+            Hotspot("13th Flame Chaser", "Japanese food 4", "Most authentic japanese food in Surakarta city.....", "100 meters from you", R.drawable.splash),
+            Hotspot("13th Flame Chaser", "Japanese food 5", "Most authentic japanese food in Surakarta city.....", "100 meters from you", R.drawable.splash),
+
+
+
+
+            // tambah data dummy lainnya
+        )
+
+        binding.rvHotspots.layoutManager = LinearLayoutManager(requireContext())
+        binding.rvHotspots.adapter = HotspotAdapter(hotspotList)
+
         return root
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
