@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.WindowInsets
 import android.view.WindowManager
+import android.widget.EditText
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
@@ -19,6 +20,7 @@ import com.solapp.navtrip.R
 import com.solapp.navtrip.data.pref.CategoryModel
 import com.solapp.navtrip.data.pref.RecommendedModel
 import com.solapp.navtrip.databinding.FragmentHomeBinding
+import com.solapp.navtrip.ui.search.FilterDialogFragment
 
 class HomeFragment : Fragment() {
 
@@ -71,10 +73,17 @@ class HomeFragment : Fragment() {
         categoryRecycler.layoutManager = LinearLayoutManager(requireContext())
         categoryRecycler.adapter = categoryAdapter
 
+        val etSearch = view.findViewById<EditText>(R.id.et_search)
+        etSearch.setOnClickListener {
+            val dialog = FilterDialogFragment()
+            dialog.show(parentFragmentManager, "FilterDialog")
+        }
+
         // Setup tampilan dan status bar
         setupView()
         hideStatusBar()
     }
+
 
     private fun setupView() {
         val window = requireActivity().window

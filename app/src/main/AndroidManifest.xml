@@ -13,6 +13,9 @@
         android:theme="@style/Theme.NavTrip"
         tools:targetApi="31">
         <activity
+            android:name=".ui.search.searchActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -48,7 +51,7 @@
             android:exported="false" />
         <activity
             android:name=".ui.welcome.WelcomeActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ui.MainActivity"
             android:exported="false"

@@ -60,7 +60,10 @@
                 android:textColor="#000"
                 android:textColorHint="#888"
                 android:background="@android:color/transparent"
-                android:inputType="text" />
+                android:focusable="false"
+                android:cursorVisible="false"
+                android:inputType="none"
+                />
 
             <ImageView
                 android:layout_width="24dp"
